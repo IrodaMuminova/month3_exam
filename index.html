@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/index.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="header">NT-79 3-oy imtihoni</h1>
+        <button type="button" class="btn btn-primary" id="mavzu">Mavzuni o'zgartirish</button>
+        <div class="accordion mt-1" id="accordionExample">
+            <!-- TOPSHIRIQ-1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Topshiriq #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Foydalanuvchidan lavozimini so'rang.Agar lavozim <strong>ishchi</strong> bo'lsa, <i>Hello</i>,
+                        <strong>director</strong> bo'lsa,<i>Greetings</i> chiqsin.Hech narsa kiritmasa <i>No login</i>
+                        chiqsin.Boshqa so'z kiritsa <i>Bunday lavozim mavjud emas</i> chiqsin.Harf katta,kichikligi
+                        ahamiyatli emas.
+                        <form action="">
+                            <label for="lavozim">Lavozimni kiriting: </label>
+                            <input type="text" id="lavozim">
+                            <button type="button" class="btn btn-secondary" id="tasdiq"
+                                onclick="tekshir(event)">Tasdiqlash</button>
+                        </form>
+
+                        <p id="what_job"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- TOPSHIRIQ-2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Topshiriq #2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Inputlardan sanalar tanlansin va shu sanalar orasidagi vaqt kun hisobida hisoblansin.
+                        <form action="" class="date">
+                            <div>
+                                <label for="date_first">1-sanani tanlang</label>
+                                <label for="date_second">2-sanani kiriting</label>
+                                <p id="farq"></p>
+                                <button type="button" class="btn btn-secondary" id="tasdiq" onclick="kkk(event)">Farqni
+                                    topish</button>
+                            </div>
+                            <div>
+                                <input type="date" id="date_first">
+                                <input type="date" id="date_second">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- TOPSHIRIQ-3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Topshiriq #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Inputda kiritilgan sonni( maxsimal ikki xonali) o'qib beradigan (documentga yozadigan)funksiya
+                        yozing
+                        <form action="">
+                            <label for="number_read">99 gacha son kiriting: </label>
+                            <input type="number" max="99" min="0" maxlength="2" id="number_read">
+                            <p id="reading"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- TOPSHIRIQ-4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Topshiriq #4
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Berilgan <span class="text-danger">[3,5,22,5,7,2,45,75,89,21,2]</span> massivning elementlar
+                        yig'indisini har bir
+                        elementga 3 qo'shilgan holatda hisoblangan va ekranga chiqaring ya'ni hisoblash 6+8+...qilib
+                        hisoblanishi kerak.
+                        <p>Natija: <span id="natija" class="text-danger"></span></p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- TOPSHIRIQ-5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Topshiriq #5
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Berilgan <span class="text-danger" id="array_1"></span> va <span class="text-danger"
+                            id="array_2"></span> massivlarning mos elememntlar yig'indisini hisobaydigan funksiya
+                        yozing.
+                        <p>Natija: <span id="massiv" class="text-danger"></span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- TOPSHIRIQ-6 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Topshiriq #6
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Inputga kiritilgan har qanday harf kattaga o'tkazilsin .Ya'ni kichik harf bilan yozilsa ham
+                        katta harf bo'lib qolsin
+                        <form action="">
+                            <input type="text" id="upper">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- TOPSHIRIQ-7 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseeven">
+                        Topshiriq #7
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Quyidagi formani yasang:
+                        <form action="">
+                            <label for="name" class="d-block">1.Ism (maximal uzunligi :32, minimal:3, to'ldirish
+                                majburiy)</label>
+                            <input type="text" id="name" required maxlength="32" minlength="3" name="name">
+                            <label for="age" class="d-block">2.Yosh ,majburiy,maxsimal:150;minimal:0</label>
+                            <input type="number" id="age" required max="150" min="0" name="age">
+                            <button type="submit" class="btn btn-primary text-dark d-block mt-3"
+                                id="mavzu">Tasdiqlash</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- TOPSHIRIQ-8 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEight">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Topshiriq #8
+                    </button>
+                </h2>
+                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Berilgan <span id="reset_massiv" class=" text-danger"></span>massividan inputga kiritilganini
+                        o'chirib ,qolganini
+                        ekranga chiqaradigan funksiya yozing.
+                        <form action="">
+                            <input type="number" id="massiv_element">
+                            <button class="btn btn-primary" id="reset">o'chirish</button>
+                            <p id="new_massiv"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- TOPSHIRIQ-9 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingNine">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        Topshiriq #9
+                    </button>
+                </h2>
+                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Inputga kiritilgan so'zlarni ketma-ket chiqaradigan funskiya yozing;
+                        <input type="text" id="ketma_ket" class="d-block">
+                        <div id="box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/topshiriq_1.js"></script>
+    <script src="./js/topshiriq_2.js"></script>
+    <script src="./js/topshiriq_3.js"></script>
+    <script src="./js/topshiriq_4.js"></script>
+    <script src="./js/topshiriq_5.js"></script>
+    <script src="./js/topshiriq_6.js"></script>
+    <script src="./js/topshirirq_7.js"></script>
+    <script src="./js/topshiriq_8.js"></script>
+    <script src="./js/topshiriq_9.js"></script>
+</body>
+
+</html>
